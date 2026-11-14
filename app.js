@@ -72,6 +72,34 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+  // 1.8 RENDER CAREER TIMELINE
+  function renderTimeline() {
+    const container = document.getElementById('timeline-list');
+    if (!container || !PROFILE_CONFIG.timeline) return;
+
+    container.innerHTML = PROFILE_CONFIG.timeline.map((item) => `
+      <div class="relative group">
+        <!-- Node Dot -->
+        <span class="absolute -left-[29px] top-4 w-2.5 h-2.5 rounded-full ${item.isCurrent ? 'bg-emerald-400 ring-4 ring-emerald-400/20 animate-pulse' : 'bg-zinc-600 ring-4 ring-[#09090b] group-hover:bg-blue-400'} transition-colors"></span>
+        
+        <div class="editorial-card p-4 hover:border-white/20 transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
+            <div class="flex items-center gap-2">
+              <h4 class="text-sm font-bold text-white">${item.role}</h4>
+              <span class="text-xs font-semibold text-zinc-400">@ ${item.company}</span>
+            </div>
+            <span class="inline-flex text-[11px] font-semibold font-mono ${item.isCurrent ? 'text-emerald-400 bg-emerald-400/10 border border-emerald-400/20' : 'text-zinc-400 bg-zinc-800'} px-2 py-0.5 rounded w-fit">
+              ${item.period}
+            </span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            ${item.desc}
+          </p>
+        </div>
+      </div>
+    `).join('');
+  }
+
   // 2. RENDER CATEGORIES
   function renderCategories() {
     const filtersContainer = document.getElementById('category-filters');
@@ -375,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // INITIAL RUN
   renderHeader();
+  renderTimeline();
   renderAwards();
   renderCategories();
   renderProjects();

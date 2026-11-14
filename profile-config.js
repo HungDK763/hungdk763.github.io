@@ -19,7 +19,7 @@ const PROFILE_CONFIG = {
     phone: "0386618771",
     email: "hungrbc2024@gmail.com",
     education: "Kỹ sư Kỹ thuật Điện - Điện tử, Đại học Công nghiệp Hà Nội (HaUI)",
-    bio: "Kỹ sư hệ thống nhúng với 3+ năm kinh nghiệm thực chiến phát triển hệ thống điều khiển robot & tự động hóa trên STM32/Arduino, và 2+ năm Freelance thiết kế mạch điện tử, firmware tùy biến. Hiện đang công tác tại VinDynamics (từ tháng 03/2026 đến nay) nghiên cứu và phát triển hệ thống nhúng thông minh; trước đó có 1 năm công tác tại VinFast (tháng 03/2025 – 03/2026) phát triển công cụ mô phỏng ECU và hệ thống điều khiển xe tự động. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch cấp trường, Vòng 1/8 Chung kết Quốc gia).",
+    bio: "Kỹ sư hệ thống nhúng đam mê nghiên cứu và chế tạo phần cứng, thiết kế mạch PCB nhiều lớp và lập trình firmware điều khiển robot. Hiện đang công tác tại VinDynamics (trước đó là VinFast) và là cựu Đội trưởng vô địch Robocon HaUI.",
     avatar: "assets/images/avatar.jpg", // Ảnh chân dung chính thức trích xuất từ CV
     resumeUrl: "data/CV_HungDK_2025_ENG.pdf", // Tệp CV PDF gốc
     socials: {
@@ -82,6 +82,50 @@ const PROFILE_CONFIG = {
       title: "Vòng Chung Kết Quốc Gia Cuộc Thi Sáng Tạo Chie-Tech",
       team: "Đội DCN-URKCM",
       desc: "Đội trưởng 2 năm liên tiếp dẫn dắt đội thiết kế máy và cơ cấu cơ điện tử tự động hóa."
+    }
+  ],
+
+  // 3.5 QUÁ TRÌNH HOẠT ĐỘNG & KINH NGHIỆM (CAREER TIMELINE)
+  timeline: [
+    {
+      period: "03/2026 – Hiện tại",
+      role: "Kỹ Sư Hệ Thống Nhúng",
+      company: "VinDynamics",
+      location: "Hà Nội",
+      isCurrent: true,
+      desc: "Nghiên cứu và phát triển phần cứng, thiết kế mạch PCB nhiều lớp và lập trình firmware điều khiển cho các hệ thống robot thông minh."
+    },
+    {
+      period: "03/2025 – 03/2026",
+      role: "Kỹ Sư Hệ Thống Ô Tô (Automotive Engineer)",
+      company: "VinFast Việt Nam",
+      location: "Hải Phòng / Hà Nội",
+      isCurrent: false,
+      desc: "Mô phỏng các hộp điều khiển ECU và phát triển công cụ điều khiển xe tự động; kiểm thử xác thực logic trên mạng truyền thông CAN 2.0 / CAN FD / LIN."
+    },
+    {
+      period: "2023 – 03/2025",
+      role: "Kỹ Sư Nhúng & Phần Cứng Độc Lập",
+      company: "Freelance Engineer",
+      location: "Dự án độc lập",
+      isCurrent: false,
+      desc: "Thiết kế phần cứng và lập trình bộ điều khiển máy uốn BMD 6 trục tự động, hệ thống điều khiển giường y tế và phần mềm dẫn đường xe tự hành AGV."
+    },
+    {
+      period: "09/2022 – 03/2024",
+      role: "Kỹ Sư R&D Sản Phẩm",
+      company: "Công ty TNHH Phát triển Công nghệ QT Việt Nam",
+      location: "Hà Nội",
+      isCurrent: false,
+      desc: "Nghiên cứu, thiết kế phần cứng và phát triển firmware cho bộ kit học tập robot STEM và bộ nguồn AC đa năng."
+    },
+    {
+      period: "2021 – 2024",
+      role: "Đội Trưởng Robocon & Cử Nhân Kỹ Thuật",
+      company: "Đại học Công nghiệp Hà Nội (HaUI)",
+      location: "Hà Nội",
+      isCurrent: false,
+      desc: "Tốt nghiệp chuyên ngành Kỹ thuật Điện - Điện tử. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch trường 2024, giải Nhì 2023, Vòng 1/8 Quốc gia)."
     }
   ],
 
