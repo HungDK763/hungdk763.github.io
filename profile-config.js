@@ -10,16 +10,16 @@ const PROFILE_CONFIG = {
   // 1. THÔNG TIN CÁ NHÂN (PERSONAL INFO)
   personal: {
     name: "Đoàn Khắc Hùng",
-    role: "Embedded Systems Engineer",
-    company: "VinFast / VinDynamics",
+    role: "Kỹ Sư Hệ Thống Nhúng @ VinDynamics",
+    company: "VinDynamics",
     birthYear: "2003",
-    status: "Đang làm việc tại VinFast / VinDynamics",
+    status: "Đang công tác tại VinDynamics",
     statusColor: "#22c55e",
     location: "Hà Nội, Việt Nam",
     phone: "0386618771",
     email: "hungrbc2024@gmail.com",
     education: "Kỹ sư Kỹ thuật Điện - Điện tử, Đại học Công nghiệp Hà Nội (HaUI)",
-    bio: "Kỹ sư hệ thống nhúng với 3+ năm kinh nghiệm thực chiến phát triển hệ thống điều khiển robot & tự động hóa trên STM32/Arduino, và 2+ năm Freelance thiết kế mạch điện tử, firmware tùy biến. Hiện đang công tác tại VinFast phát triển công cụ mô phỏng ECU và hệ thống điều khiển xe tự động. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch cấp trường, Vòng 1/8 Chung kết Quốc gia).",
+    bio: "Kỹ sư hệ thống nhúng với 3+ năm kinh nghiệm thực chiến phát triển hệ thống điều khiển robot & tự động hóa trên STM32/Arduino, và 2+ năm Freelance thiết kế mạch điện tử, firmware tùy biến. Hiện đang công tác tại VinDynamics (từ tháng 03/2026 đến nay) nghiên cứu và phát triển hệ thống nhúng thông minh; trước đó có 1 năm công tác tại VinFast (tháng 03/2025 – 03/2026) phát triển công cụ mô phỏng ECU và hệ thống điều khiển xe tự động. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch cấp trường, Vòng 1/8 Chung kết Quốc gia).",
     avatar: "assets/images/avatar.jpg", // Ảnh chân dung chính thức trích xuất từ CV
     resumeUrl: "data/CV_HungDK_2025_ENG.pdf", // Tệp CV PDF gốc
     socials: {
@@ -164,8 +164,8 @@ const PROFILE_CONFIG = {
       id: "vinfast-ecu-simulation",
       category: "automotive",
       title: "Hệ Thống Mô Phỏng ECU & Điều Khiển Xe Tự Động (VinFast)",
-      role: "Automotive Systems Engineer",
-      timeline: "Mar 2025 - Present",
+      role: "Automotive Systems Engineer @ VinFast",
+      timeline: "03/2025 - 03/2026",
       featured: true,
       tagline: "Mô phỏng các hộp điều khiển ECU và phát triển công cụ điều khiển tự động phục vụ kiểm thử và xác thực hệ thống xe điện.",
       heroImage: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80",
