@@ -17,14 +17,14 @@ const PROFILE_CONFIG = {
     statusColor: "#22c55e",
     location: "Hà Nội, Việt Nam",
     phone: "0386618771",
-    email: "hungrbc2024@gmail.com",
+    email: "tolahungstm@gmail.com",
     education: "Kỹ sư Kỹ thuật Điện - Điện tử, Đại học Công nghiệp Hà Nội (HaUI)",
-    bio: "Kỹ sư hệ thống nhúng đam mê nghiên cứu và chế tạo phần cứng, thiết kế mạch PCB nhiều lớp và lập trình firmware điều khiển robot. Hiện đang công tác tại VinDynamics (trước đó là VinFast) và là cựu Đội trưởng vô địch Robocon HaUI.",
+    bio: "Kỹ sư hệ thống nhúng đam mê nghiên cứu và chế tạo phần cứng, thiết kế mạch PCB nhiều lớp và lập trình firmware điều khiển robot. Hiện đang công tác tại VinDynamics. Cựu Đội trưởng vô địch Robocon HaUI.",
     avatar: "assets/images/avatar.jpg", // Ảnh chân dung chính thức trích xuất từ CV
     resumeUrl: "data/CV_HungDK_2025_ENG.pdf", // Tệp CV PDF gốc
     socials: {
       github: "https://github.com/HungDK763",
-      email: "mailto:hungrbc2024@gmail.com",
+      email: "mailto:tolahungstm@gmail.com",
       phone: "tel:0386618771"
     }
   },
@@ -133,7 +133,7 @@ const PROFILE_CONFIG = {
   categories: [
     { id: "all", label: "Tất cả dự án & Sản phẩm" },
     { id: "robotics", label: "Robot thi đấu & Chế tạo máy" },
-    { id: "automotive", label: "Automotive & VinFast" },
+    { id: "automotive", label: "Hệ thống ô tô & ECU" },
     { id: "pcb", label: "Thiết kế mạch & PCB" },
     { id: "industrial", label: "Tự động hóa & Thiết bị y tế" }
   ],

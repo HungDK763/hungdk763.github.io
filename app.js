@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Copy email to clipboard
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      const email = PROFILE_CONFIG.personal.email || 'hungrbc2024@gmail.com';
+      const email = PROFILE_CONFIG.personal.email || 'tolahungstm@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         if (copyEmailText) copyEmailText.textContent = 'Đã chép!';
         setTimeout(() => {
