@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đoàn Khắc Hùng | Embedded Systems & Hardware Engineering</title>
+  <meta name="description" content="Engineering Portfolio của Đoàn Khắc Hùng - Kỹ sư Hệ thống Nhúng, Thiết kế PCB & Điều khiển Robot tại VinFast / VinDynamics.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='1'/><path d='M7 7h.01'/><path d='M17 7h.01'/><path d='M7 17h.01'/><path d='M17 17h.01'/><path d='M12 12h.01'/></svg>">
+
+  <!-- Google Fonts: JetBrains Mono + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            hw: {
+              950: '#07080c',
+              900: '#0b0d13',
+              850: '#10131b',
+              800: '#161a25',
+              700: '#1e2433',
+              600: '#2f384f',
+              border: '#1e2433',
+              borderLight: '#2f384f',
+              amber: '#f59e0b',
+              green: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-hw-900 text-slate-100 min-h-screen selection:bg-amber-500/20 selection:text-amber-400 antialiased">
+
+  <!-- Top Hardware Telemetry Status Strip -->
+  <div class="border-b border-hw-border bg-hw-950/90 backdrop-blur sticky top-0 z-40 text-[11px] font-mono text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-slate-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 led-active"></span>
+          <span id="telemetry-status">SYS_STATUS: ACTIVE</span>
+        </span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-400 hidden sm:inline">DISCIPLINE: EMBEDDED_FIRMWARE & HARDWARE_PCB</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-amber-400 font-semibold" id="telemetry-company">@ VINFAST / VINDYNAMICS</span>
+        <span class="text-slate-600 hidden md:inline">|</span>
+        <span class="hidden md:inline" id="telemetry-location">LOC: HANOI_VN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+
+    <!-- ==================== HERO / WORKBENCH DOSSIER ==================== -->
+    <header class="pb-12 border-b border-hw-border">
+      
+      <div class="flex flex-col lg:flex-row gap-8 items-start justify-between">
+        
+        <!-- Left: Avatar + Title -->
+        <div class="flex flex-col sm:flex-row gap-6 items-start">
+          
+          <!-- Avatar in Technical Frame -->
+          <div class="relative tech-box p-1.5 rounded-sm flex-shrink-0">
+            <div class="w-28 h-28 sm:w-32 sm:h-32 bg-hw-850 overflow-hidden">
+              <img id="profile-avatar" src="" alt="Avatar" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+            <div class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-hw-950/90 border border-hw-border text-[9px] font-mono text-amber-400">
+              ENG-2025
+            </div>
+          </div>
+
+          <!-- Name, Role & Specs -->
+          <div>
+            <div class="font-mono text-xs text-amber-500 tracking-wider uppercase mb-1 flex items-center gap-2">
+              <span>// ENGINEERING PORTFOLIO</span>
+              <span class="text-slate-600">--</span>
+              <span class="text-slate-400">HAUI ALUMNI</span>
+            </div>
+
+            <h1 id="profile-name" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-2">
+              Đoàn Khắc Hùng
+            </h1>
+
+            <div class="font-mono text-sm sm:text-base text-slate-300 mb-3 flex flex-wrap items-center gap-2">
+              <span id="profile-role">Embedded Systems & Hardware Engineer</span>
+              <span class="px-2 py-0.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs">
+                VinFast / VinDynamics
+              </span>
+            </div>
+
+            <div class="font-mono text-xs text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span>TEL: <a href="tel:0386618771" class="text-slate-200 hover:text-amber-400">0386618771</a></span>
+              <span>EMAIL: <a href="mailto:hungrbc2024@gmail.com" class="text-slate-200 hover:text-amber-400">hungrbc2024@gmail.com</a></span>
+              <span>GIT: <a href="https://github.com/HungvsRobot" target="_blank" class="text-slate-200 hover:text-amber-400 underline">HungvsRobot</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Technical Action Panel -->
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 w-full lg:w-auto font-mono text-xs">
+          <a id="btn-resume" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-hw-950 font-bold transition-all">
+            <i data-lucide="file-down" class="w-4 h-4"></i>
+            <span>[ DOWNLOAD_CV_PDF ]</span>
+          </a>
+          <a id="btn-email" href="#" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 tech-box text-slate-200 hover:text-white transition-all">
+            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+            <span>[ CONTACT_VIA_EMAIL ]</span>
+          </a>
+          <a href="https://github.com/HungvsRobot" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 tech-box text-slate-300 hover:text-white transition-all">
+            <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+            <span>[ GITHUB_REPOSITORIES ]</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bio Engineering Summary -->
+      <div class="mt-8 pt-6 border-t border-hw-border">
+        <p id="profile-bio" class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl">
+          Loading bio...
+        </p>
+      </div>
+
+      <!-- Technical Stack Matrix (No rounded pills, technical tags) -->
+      <div class="mt-8">
+        <div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="text-amber-400">//</span>
+          <span>CORE_TECHNICAL_COMPETENCIES (KỸ NĂNG KỸ THUẬT CỐT LÕI)</span>
+        </div>
+        <div id="skills-cloud" class="flex flex-wrap gap-2">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Field Track Record & Awards (Competition Log) -->
+      <div class="mt-10 pt-8 border-t border-hw-border">
+        <div class="font-mono text-xs text-amber-400 uppercase tracking-wider mb-4 flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <span>// FIELD_OPERATIONS & COMPETITION_LOG</span>
+            <span class="text-slate-500 font-normal">(Chiến tích thi đấu Robocon & Chietech)</span>
+          </span>
+          <span class="text-slate-500 text-[11px] hidden sm:inline">OFFICIAL_RECORD</span>
+        </div>
+
+        <div id="awards-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== ENGINEERING PROJECTS & CASE FILES ==================== -->
+    <main class="py-12">
+      
+      <!-- Section Title & Filter Tabs -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div>
+          <div class="font-mono text-xs text-amber-500 tracking-wider uppercase mb-1">// SYSTEM_PORTFOLIO</div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
+            <span>Dự Án Kỹ Thuật & Sản Phẩm Đã Chế Tạo</span>
+            <span id="projects-count" class="font-mono text-xs font-semibold px-2 py-0.5 bg-hw-850 text-amber-400 border border-hw-border">0</span>
+          </h2>
+        </div>
+
+        <!-- Filter Buttons (Monospace Brackets) -->
+        <div id="category-filters" class="flex flex-wrap items-center gap-1 bg-hw-950 p-1 border border-hw-border">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Projects Grid (Datasheet Case Files) -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-16 tech-box">
+        <i data-lucide="file-question" class="w-10 h-10 text-slate-500 mx-auto mb-2"></i>
+        <p class="font-mono text-xs text-slate-400">NO_RECORDS_FOUND_IN_THIS_CATEGORY</p>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="pt-8 border-t border-hw-border font-mono text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span>Đoàn Khắc Hùng • Embedded Systems & Hardware Engineering</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/HungvsRobot" target="_blank" class="hover:text-amber-400 transition-colors">github.com/HungvsRobot</a>
+        <a href="#top" class="hover:text-white transition-colors flex items-center gap-1">
+          <span>[ TOP ]</span>
+          <i data-lucide="arrow-up" class="w-3 h-3"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==================== TECHNICAL DOSSIER MODAL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-200">
+    <div id="modal-backdrop" class="absolute inset-0 bg-hw-950/85 backdrop-blur-sm"></div>
+
+    <div class="relative w-full h-full overflow-y-auto px-4 py-8 flex justify-center">
+      <div id="modal-container" class="relative w-full max-w-3xl tech-box p-6 sm:p-8 transform transition-transform duration-200 my-auto bg-hw-850 border border-hw-borderLight shadow-2xl">
+        
+        <!-- Header Bar -->
+        <div class="flex items-center justify-between border-b border-hw-border pb-4 mb-6">
+          <div class="font-mono text-xs text-amber-400 flex items-center gap-2">
+            <span>CASE_FILE //</span>
+            <span id="modal-role" class="text-slate-300">ROLE</span>
+            <span class="text-slate-600">--</span>
+            <span id="modal-timeline" class="text-slate-400">TIMELINE</span>
+          </div>
+
+          <button id="modal-close-btn" class="font-mono text-xs text-slate-400 hover:text-white p-1 hover:bg-hw-700 transition-colors">
+            [ CLOSE_X ]
+          </button>
+        </div>
+
+        <!-- Project Title -->
+        <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+          Project Title
+        </h3>
+        <p id="modal-tagline" class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-mono">
+          Project Tagline
+        </p>
+
+        <!-- Image Gallery / Technical View -->
+        <div class="border border-hw-border bg-hw-950 p-1 mb-6">
+          <img id="modal-main-image" src="" alt="Preview" class="w-full h-[280px] sm:h-[400px] object-cover">
+          <div id="modal-gallery-thumbs" class="flex gap-2 p-2 bg-hw-950 border-t border-hw-border overflow-x-auto">
+            <!-- Thumbs injected by JS -->
+          </div>
+        </div>
+
+        <!-- Metrics Strip (KPIs) -->
+        <div id="modal-metrics" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-6">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Tech Stack Badges -->
+        <div class="mb-6">
+          <div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-2">// SPECIFICATIONS & TOOLS</div>
+          <div id="modal-skills" class="flex flex-wrap gap-1.5">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Technical Breakdown -->
+        <div class="space-y-4 text-sm text-slate-300 border-t border-hw-border pt-6">
+          <div>
+            <h4 class="font-mono text-xs uppercase text-amber-400 font-bold mb-1">// THE_CHALLENGE (BÀI TOÁN KỸ THUẬT)</h4>
+            <p id="modal-challenge" class="text-slate-300 leading-relaxed"></p>
+          </div>
+
+          <div>
+            <h4 class="font-mono text-xs uppercase text-emerald-400 font-bold mb-1">// IMPLEMENTATION_DETAILS (GIẢI PHÁP ĐÃ THỰC HIỆN)</h4>
+            <ul id="modal-solutions" class="space-y-1.5 list-disc list-inside text-slate-300 leading-relaxed">
+              <!-- Injected by JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div id="modal-actions" class="mt-8 pt-6 border-t border-hw-border flex flex-wrap items-center justify-end gap-3 font-mono text-xs">
+          <!-- Links injected by JS -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="profile-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
