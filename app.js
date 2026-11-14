@@ -340,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. CONTACT MODAL (OPTION B)
   const contactModal = document.getElementById('contact-modal');
   const btnContact = document.getElementById('btn-contact');
+  const navBtnContact = document.getElementById('nav-btn-contact');
   const contactCloseBtn = document.getElementById('contact-modal-close');
   const contactBackdrop = document.getElementById('contact-modal-backdrop');
   const copyEmailBtn = document.getElementById('copy-email-btn');
@@ -365,6 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (btnContact) btnContact.addEventListener('click', openContactModal);
+  if (navBtnContact) navBtnContact.addEventListener('click', openContactModal);
   if (contactCloseBtn) contactCloseBtn.addEventListener('click', closeContactModal);
   if (contactBackdrop) contactBackdrop.addEventListener('click', closeContactModal);
 

@@ -45,9 +45,9 @@
 </head>
 <body class="bg-[#09090b] text-[#f4f4f5] min-h-screen antialiased selection:bg-zinc-800 selection:text-white">
 
-  <!-- Top Minimalist Navigation -->
+  <!-- Top Navigation Bar -->
   <nav class="border-b border-white/[0.06] bg-[#09090b]/80 backdrop-blur-md sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Status -->
       <div class="flex items-center gap-3">
@@ -62,9 +62,13 @@
 
       <!-- Quick Nav Links -->
       <div class="flex items-center gap-3">
-        <a id="nav-btn-resume" href="#" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors shadow-sm">
+        <button id="nav-btn-contact" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 border border-white/[0.08] text-zinc-300 hover:text-white transition-colors cursor-pointer">
+          <i data-lucide="message-square-share" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Liên hệ</span>
+        </button>
+        <a id="nav-btn-resume" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors shadow-sm">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>Tải CV (PDF)</span>
+          <span>Tải CV</span>
         </a>
         <a id="nav-btn-github" href="https://github.com/HungDK763" target="_blank" class="p-2 rounded-lg bg-zinc-900 border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">
           <i data-lucide="github" class="w-4 h-4"></i>
@@ -74,163 +78,175 @@
     </div>
   </nav>
 
-  <!-- Main Container -->
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+  <!-- Main Split Layout Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <header class="pb-14 border-b border-white/[0.06]">
-      <div class="flex flex-col md:flex-row gap-8 items-start justify-between">
+      <!-- ==================== LEFT COLUMN: CV SIDEBAR (INFO & TIMELINE) ==================== -->
+      <aside class="w-full lg:w-[380px] xl:w-[420px] lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-3 sidebar-scroll flex-shrink-0 space-y-8">
         
-        <div class="flex flex-col sm:flex-row gap-6 items-start">
-          <!-- Avatar with smooth border -->
-          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-900 border border-white/[0.1] shadow-xl flex-shrink-0">
-            <img id="profile-avatar" src="" alt="Avatar" class="w-full h-full object-cover">
-          </div>
-
-          <!-- Titles -->
-          <div>
-            <div class="text-xs font-medium text-zinc-400 mb-1 flex items-center gap-2">
-              <span>Hà Nội, Việt Nam</span>
-              <span>•</span>
-              <span>HaUI Alumni</span>
+        <!-- Profile Card -->
+        <div class="editorial-card p-6 space-y-5">
+          
+          <!-- Avatar + Status -->
+          <div class="flex items-start gap-4">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-zinc-900 border border-white/[0.1] shadow-xl flex-shrink-0">
+              <img id="profile-avatar" src="" alt="Avatar" class="w-full h-full object-cover">
             </div>
-
-            <h1 id="profile-name" class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
-              Đoàn Khắc Hùng
-            </h1>
-
-            <p id="profile-role" class="text-base sm:text-lg font-medium text-zinc-300 mb-3">
-              Kỹ Sư Hệ Thống Nhúng & Thiết Kế Phần Cứng
-            </p>
-
-            <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-400">
-              <a href="mailto:hungrbc2024@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
-                <i data-lucide="mail" class="w-3.5 h-3.5 text-zinc-500"></i>
-                <span>hungrbc2024@gmail.com</span>
-              </a>
-              <span>•</span>
-              <a href="tel:0386618771" class="hover:text-white transition-colors flex items-center gap-1.5">
-                <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-500"></i>
-                <span>0386618771</span>
-              </a>
+            <div>
+              <div class="text-[11px] font-medium text-zinc-400 mb-1 flex items-center gap-1.5">
+                <span>Hà Nội, VN</span>
+                <span>•</span>
+                <span>HaUI Alumni</span>
+              </div>
+              <h1 id="profile-name" class="font-display text-2xl font-extrabold tracking-tight text-white mb-1">
+                Đoàn Khắc Hùng
+              </h1>
+              <p id="profile-role" class="text-xs sm:text-sm font-semibold text-emerald-400">
+                Kỹ Sư Hệ Thống Nhúng @ VinDynamics
+              </p>
             </div>
           </div>
-        </div>
 
-        <!-- Action Buttons -->
-        <div class="flex items-center gap-2.5 w-full md:w-auto">
-          <button id="btn-contact" class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-850 border border-white/[0.1] text-zinc-200 hover:text-white transition-all cursor-pointer">
-            <i data-lucide="message-square-share" class="w-4 h-4 text-emerald-400"></i>
-            <span>Liên hệ trao đổi</span>
-          </button>
-          <a id="btn-resume" href="#" target="_blank" class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white hover:bg-zinc-200 text-zinc-950 transition-all shadow-sm">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
-            <span>Xem CV đầy đủ</span>
-          </a>
-        </div>
-      </div>
+          <!-- Short Bio -->
+          <p id="profile-bio" class="text-zinc-300 text-xs sm:text-sm leading-relaxed border-t border-white/[0.06] pt-4">
+            Loading bio...
+          </p>
 
-      <!-- Bio Paragraph -->
-      <div class="mt-8 max-w-3xl">
-        <p id="profile-bio" class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-          Loading bio...
-        </p>
-      </div>
-
-      <!-- Skills Cloud -->
-      <div class="mt-8">
-        <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
-          Kỹ Năng Kỹ Thuật Chính
-        </div>
-        <div id="skills-cloud" class="flex flex-wrap gap-2">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-
-      <!-- Career & Activity Timeline -->
-      <div class="mt-12 pt-8 border-t border-white/[0.06]">
-        <div class="flex items-center justify-between mb-6">
-          <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-blue-400"></i>
-            <span>Quá Trình Hoạt Động & Kinh Nghiệm</span>
+          <!-- Contact Action Buttons -->
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-2 pt-1">
+            <button id="btn-contact" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-zinc-950 transition-all cursor-pointer font-medium shadow-sm">
+              <i data-lucide="message-square-share" class="w-4 h-4"></i>
+              <span>Liên hệ trao đổi (Zalo / Gmail)</span>
+            </button>
+            <a id="btn-resume" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 border border-white/[0.1] text-zinc-200 hover:text-white transition-all shadow-sm">
+              <i data-lucide="file-text" class="w-4 h-4 text-blue-400"></i>
+              <span>Xem tệp CV gốc (PDF)</span>
+            </a>
           </div>
-          <span class="text-xs text-zinc-400">Lộ trình sự nghiệp</span>
-        </div>
 
-        <div id="timeline-list" class="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1px] before:bg-white/[0.1]">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-
-      <!-- Awards & Competition Highlights -->
-      <div class="mt-12 pt-8 border-t border-white/[0.06]">
-        <div class="flex items-center justify-between mb-4">
-          <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
-            <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
-            <span>Thành Tích & Giải Thưởng Nổi Bật</span>
+          <!-- Quick Contact Details -->
+          <div class="pt-3 border-t border-white/[0.06] space-y-2 text-xs text-zinc-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-zinc-500"></i>
+              <span class="text-zinc-300">hungrbc2024@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-500"></i>
+              <span class="text-zinc-300">0386618771 (Zalo)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="github" class="w-3.5 h-3.5 text-zinc-500"></i>
+              <a href="https://github.com/HungDK763" target="_blank" class="text-blue-400 hover:underline">github.com/HungDK763</a>
+            </div>
           </div>
-          <span class="text-xs text-zinc-400">Robocon & Chietech</span>
+
         </div>
 
-        <div id="awards-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </header>
+        <!-- Career Timeline (Lịch sử làm việc) -->
+        <div class="editorial-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-white/[0.06] pb-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
+              <i data-lucide="briefcase" class="w-4 h-4 text-blue-400"></i>
+              <span>Lịch Sử Làm Việc & Hoạt Động</span>
+            </div>
+            <span class="text-[11px] text-zinc-500">Timeline</span>
+          </div>
 
-    <!-- ==================== PROJECTS SECTION ==================== -->
-    <main class="py-14">
-      
-      <!-- Section Title & Category Filter Tabs -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+          <!-- Timeline items injected here -->
+          <div id="timeline-list" class="relative pl-5 space-y-5 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-[1px] before:bg-white/[0.1]">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Core Skills Cloud -->
+        <div class="editorial-card p-6 space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-300 flex items-center gap-2 border-b border-white/[0.06] pb-2.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+            <span>Kỹ Năng & Công Cụ Cốt Lõi</span>
+          </div>
+          <div id="skills-cloud" class="flex flex-wrap gap-1.5 pt-1">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ==================== RIGHT COLUMN: MAIN SHOWCASE (PROJECTS & AWARDS) ==================== -->
+      <main class="w-full flex-1 min-w-0 space-y-12">
+        
+        <!-- Projects Section Header & Filters -->
         <div>
-          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2.5">
-            <span>Sản Phẩm & Dự Án Đã Làm</span>
-            <span id="projects-count" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">0</span>
-          </h2>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-1">Portfolio & Showroom</div>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2.5">
+                <span>Sản Phẩm & Dự Án Đã Làm</span>
+                <span id="projects-count" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">0</span>
+              </h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div id="category-filters" class="flex flex-wrap items-center gap-1 p-1 bg-zinc-900 border border-white/[0.06] rounded-xl overflow-x-auto">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Projects Grid (Large 16:9 Showcase Cards) -->
+          <div id="projects-grid" class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="empty-state" class="hidden text-center py-16 editorial-card">
+            <i data-lucide="folder" class="w-10 h-10 text-zinc-600 mx-auto mb-2"></i>
+            <p class="text-sm text-zinc-400">Chưa có dự án nào trong mục này.</p>
+          </div>
         </div>
 
-        <!-- Filter Tabs -->
-        <div id="category-filters" class="flex flex-wrap items-center gap-1 p-1 bg-zinc-900 border border-white/[0.06] rounded-xl overflow-x-auto">
-          <!-- Rendered by JS -->
+        <!-- Awards & Honors Section -->
+        <div class="pt-8 border-t border-white/[0.06]">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">Thành Tích Thi Đấu</div>
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                <i data-lucide="trophy" class="w-5 h-5 text-amber-400"></i>
+                <span>Giải Thưởng Robocon & Chietech Nổi Bật</span>
+              </h3>
+            </div>
+          </div>
+
+          <div id="awards-list" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+            <!-- Rendered by JS -->
+          </div>
         </div>
-      </div>
 
-      <!-- Projects Grid (Clean Editorial Cards) -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Rendered by JS -->
-      </div>
+        <!-- Footer -->
+        <footer class="pt-8 border-t border-white/[0.06] text-xs text-zinc-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© 2026 Đoàn Khắc Hùng • Embedded Systems & Hardware Engineering.</p>
+          <div class="flex items-center gap-5">
+            <a href="https://github.com/HungDK763" target="_blank" class="hover:text-white transition-colors">GitHub Profile</a>
+            <a href="#top" class="hover:text-white transition-colors flex items-center gap-1">
+              <span>Lên đầu trang</span>
+              <i data-lucide="arrow-up" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </footer>
 
-      <!-- Empty State -->
-      <div id="empty-state" class="hidden text-center py-16 editorial-card">
-        <i data-lucide="folder" class="w-10 h-10 text-zinc-600 mx-auto mb-2"></i>
-        <p class="text-sm text-zinc-400">Chưa có dự án nào trong mục này.</p>
-      </div>
-    </main>
+      </main>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="pt-10 border-t border-white/[0.06] text-xs text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Đoàn Khắc Hùng • Embedded Systems & Hardware Engineering.</p>
-      <div class="flex items-center gap-5">
-        <a href="https://github.com/HungDK763" target="_blank" class="hover:text-white transition-colors">GitHub Profile</a>
-        <a href="#top" class="hover:text-white transition-colors flex items-center gap-1">
-          <span>Lên đầu trang</span>
-          <i data-lucide="arrow-up" class="w-3 h-3"></i>
-        </a>
-      </div>
-    </footer>
+    </div>
   </div>
 
   <!-- ==================== CASE STUDY MODAL ==================== -->
   <div id="project-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-200">
-    <!-- Backdrop -->
     <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
     <div class="relative w-full h-full overflow-y-auto px-4 py-8 sm:py-12 flex justify-center">
       <div id="modal-container" class="relative w-full max-w-3xl bg-[#121216] border border-white/[0.1] rounded-2xl shadow-2xl p-6 sm:p-8 transform scale-95 transition-transform duration-200 my-auto">
         
         <!-- Close Button -->
-        <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors">
+        <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors cursor-pointer">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
 
@@ -400,7 +416,7 @@
   </div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="profile-config.js?v=20261114_04"></script>
-  <script src="app.js?v=20261114_04"></script>
+  <script src="profile-config.js?v=20261114_05"></script>
+  <script src="app.js?v=20261114_05"></script>
 </body>
 </html>
