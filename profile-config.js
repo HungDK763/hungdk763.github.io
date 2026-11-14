@@ -23,7 +23,7 @@ const PROFILE_CONFIG = {
     avatar: "assets/images/avatar.jpg", // Ảnh chân dung chính thức trích xuất từ CV
     resumeUrl: "data/CV_HungDK_2025_ENG.pdf", // Tệp CV PDF gốc
     socials: {
-      github: "https://github.com/HungvsRobot",
+      github: "https://github.com/HungDK763",
       email: "mailto:hungrbc2024@gmail.com",
       phone: "tel:0386618771"
     }
@@ -125,7 +125,7 @@ const PROFILE_CONFIG = {
       ],
       links: {
         demo: "https://www.youtube.com/results?search_query=ABU+Robocon+2024+DCN-LOE",
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     },
     {
@@ -157,7 +157,7 @@ const PROFILE_CONFIG = {
       ],
       links: {
         demo: "https://www.youtube.com/results?search_query=ROBOCON+2023+DCN-UBKM",
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     },
     {
@@ -186,7 +186,7 @@ const PROFILE_CONFIG = {
         "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1000&q=80"
       ],
       links: {
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     },
     {
@@ -217,7 +217,7 @@ const PROFILE_CONFIG = {
         "assets/images/pcb_motor_driver_purple.jpg"
       ],
       links: {
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     },
     {
@@ -247,7 +247,7 @@ const PROFILE_CONFIG = {
         "assets/images/pcb_motor_driver_purple.jpg"
       ],
       links: {
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     },
     {
@@ -276,7 +276,7 @@ const PROFILE_CONFIG = {
         "assets/images/pcb_motor_driver_purple.jpg"
       ],
       links: {
-        github: "https://github.com/HungvsRobot"
+        github: "https://github.com/HungDK763"
       }
     }
   ]

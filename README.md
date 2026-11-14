@@ -72,7 +72,7 @@ Mở tệp [profile-config.js](file:///A:/00_HungDk/00_my_prject/01_my_profile/p
 
 ## 🌐 Hướng dẫn đưa lên GitHub Pages (Miễn phí trọn đời)
 
-Khi bạn muốn đưa website này lên mạng thành đường dẫn dạng `https://<username>.github.io/<repo-name>`:
+Khi bạn muốn đưa website này lên mạng thành đường dẫn dạng `https://hungdk763.github.io`:
 
 1. **Khởi tạo Git & Commit:**
    ```powershell
@@ -81,12 +81,13 @@ Khi bạn muốn đưa website này lên mạng thành đường dẫn dạng `h
    git commit -m "feat: initial engineering portfolio showcase"
    ```
 2. **Tạo repository mới trên GitHub:**
-   - Đặt tên repo là `portfolio` (hoặc tên bất kỳ bạn thích).
+   - Truy cập https://github.com/new
+   - Đặt tên repo là `hungdk763.github.io` (để dùng domain gốc) hoặc `portfolio`.
    - Chọn chế độ **Public**.
 3. **Đẩy mã nguồn lên GitHub:**
    ```powershell
    git branch -M main
-   git remote add origin https://github.com/<username>/portfolio.git
+   git remote add origin https://github.com/HungDK763/hungdk763.github.io.git
    git push -u origin main
    ```
 4. **Bật GitHub Pages:**
