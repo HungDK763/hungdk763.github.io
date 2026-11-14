@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đoàn Khắc Hùng | Embedded Systems & Hardware Engineering</title>
-  <meta name="description" content="Engineering Portfolio của Đoàn Khắc Hùng - Kỹ sư Hệ thống Nhúng, Thiết kế PCB & Điều khiển Robot tại VinFast / VinDynamics.">
+  <title>Đoàn Khắc Hùng | Embedded Systems Engineer</title>
+  <meta name="description" content="Portfolio của Đoàn Khắc Hùng - Kỹ sư Hệ thống Nhúng, Thiết kế Mạch Điện tử & Robot tại VinFast / VinDynamics.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='1'/><path d='M7 7h.01'/><path d='M17 7h.01'/><path d='M7 17h.01'/><path d='M17 17h.01'/><path d='M12 12h.01'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='2'/><path d='M7 7h.01'/><path d='M17 7h.01'/><path d='M7 17h.01'/><path d='M17 17h.01'/><path d='M12 12h.01'/></svg>">
 
-  <!-- Google Fonts: JetBrains Mono + Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,21 +22,14 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            hw: {
-              950: '#07080c',
-              900: '#0b0d13',
-              850: '#10131b',
-              800: '#161a25',
-              700: '#1e2433',
-              600: '#2f384f',
-              border: '#1e2433',
-              borderLight: '#2f384f',
-              amber: '#f59e0b',
-              green: '#10b981'
+            brand: {
+              50: '#f0fdf4',
+              500: '#22c55e',
+              blue: '#3b82f6'
             }
           }
         }
@@ -50,239 +43,241 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-hw-900 text-slate-100 min-h-screen selection:bg-amber-500/20 selection:text-amber-400 antialiased">
+<body class="bg-[#09090b] text-[#f4f4f5] min-h-screen antialiased selection:bg-zinc-800 selection:text-white">
 
-  <!-- Top Hardware Telemetry Status Strip -->
-  <div class="border-b border-hw-border bg-hw-950/90 backdrop-blur sticky top-0 z-40 text-[11px] font-mono text-slate-400">
-    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-slate-200">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 led-active"></span>
-          <span id="telemetry-status">SYS_STATUS: ACTIVE</span>
-        </span>
-        <span class="text-slate-600">|</span>
-        <span class="text-slate-400 hidden sm:inline">DISCIPLINE: EMBEDDED_FIRMWARE & HARDWARE_PCB</span>
-      </div>
-      <div class="flex items-center gap-4 text-slate-400">
-        <span class="text-amber-400 font-semibold" id="telemetry-company">@ VINFAST / VINDYNAMICS</span>
-        <span class="text-slate-600 hidden md:inline">|</span>
-        <span class="hidden md:inline" id="telemetry-location">LOC: HANOI_VN</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content Wrapper -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
-
-    <!-- ==================== HERO / WORKBENCH DOSSIER ==================== -->
-    <header class="pb-12 border-b border-hw-border">
+  <!-- Top Minimalist Navigation -->
+  <nav class="border-b border-white/[0.06] bg-[#09090b]/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <div class="flex flex-col lg:flex-row gap-8 items-start justify-between">
+      <!-- Brand & Status -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="font-display font-bold text-base tracking-tight text-white hover:text-zinc-300 transition-colors">
+          Đoàn Khắc Hùng
+        </a>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>VinFast / VinDynamics</span>
+        </span>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex items-center gap-3">
+        <a id="nav-btn-resume" href="#" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors shadow-sm">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Tải CV (PDF)</span>
+        </a>
+        <a id="nav-btn-github" href="https://github.com/HungvsRobot" target="_blank" class="p-2 rounded-lg bg-zinc-900 border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="pb-14 border-b border-white/[0.06]">
+      <div class="flex flex-col md:flex-row gap-8 items-start justify-between">
         
-        <!-- Left: Avatar + Title -->
         <div class="flex flex-col sm:flex-row gap-6 items-start">
-          
-          <!-- Avatar in Technical Frame -->
-          <div class="relative tech-box p-1.5 rounded-sm flex-shrink-0">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 bg-hw-850 overflow-hidden">
-              <img id="profile-avatar" src="" alt="Avatar" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300">
-            </div>
-            <div class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-hw-950/90 border border-hw-border text-[9px] font-mono text-amber-400">
-              ENG-2025
-            </div>
+          <!-- Avatar with smooth border -->
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-900 border border-white/[0.1] shadow-xl flex-shrink-0">
+            <img id="profile-avatar" src="" alt="Avatar" class="w-full h-full object-cover">
           </div>
 
-          <!-- Name, Role & Specs -->
+          <!-- Titles -->
           <div>
-            <div class="font-mono text-xs text-amber-500 tracking-wider uppercase mb-1 flex items-center gap-2">
-              <span>// ENGINEERING PORTFOLIO</span>
-              <span class="text-slate-600">--</span>
-              <span class="text-slate-400">HAUI ALUMNI</span>
+            <div class="text-xs font-medium text-zinc-400 mb-1 flex items-center gap-2">
+              <span>Hà Nội, Việt Nam</span>
+              <span>•</span>
+              <span>HaUI Alumni</span>
             </div>
 
-            <h1 id="profile-name" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-2">
+            <h1 id="profile-name" class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
               Đoàn Khắc Hùng
             </h1>
 
-            <div class="font-mono text-sm sm:text-base text-slate-300 mb-3 flex flex-wrap items-center gap-2">
-              <span id="profile-role">Embedded Systems & Hardware Engineer</span>
-              <span class="px-2 py-0.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs">
-                VinFast / VinDynamics
-              </span>
-            </div>
+            <p id="profile-role" class="text-base sm:text-lg font-medium text-zinc-300 mb-3">
+              Kỹ Sư Hệ Thống Nhúng & Thiết Kế Phần Cứng
+            </p>
 
-            <div class="font-mono text-xs text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
-              <span>TEL: <a href="tel:0386618771" class="text-slate-200 hover:text-amber-400">0386618771</a></span>
-              <span>EMAIL: <a href="mailto:hungrbc2024@gmail.com" class="text-slate-200 hover:text-amber-400">hungrbc2024@gmail.com</a></span>
-              <span>GIT: <a href="https://github.com/HungvsRobot" target="_blank" class="text-slate-200 hover:text-amber-400 underline">HungvsRobot</a></span>
+            <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-400">
+              <a href="mailto:hungrbc2024@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-zinc-500"></i>
+                <span>hungrbc2024@gmail.com</span>
+              </a>
+              <span>•</span>
+              <a href="tel:0386618771" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-500"></i>
+                <span>0386618771</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Right: Technical Action Panel -->
-        <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 w-full lg:w-auto font-mono text-xs">
-          <a id="btn-resume" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-hw-950 font-bold transition-all">
-            <i data-lucide="file-down" class="w-4 h-4"></i>
-            <span>[ DOWNLOAD_CV_PDF ]</span>
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-2.5 w-full md:w-auto">
+          <a id="btn-email" href="#" class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-850 border border-white/[0.1] text-zinc-200 hover:text-white transition-all">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Liên hệ trao đổi</span>
           </a>
-          <a id="btn-email" href="#" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 tech-box text-slate-200 hover:text-white transition-all">
-            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
-            <span>[ CONTACT_VIA_EMAIL ]</span>
-          </a>
-          <a href="https://github.com/HungvsRobot" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 tech-box text-slate-300 hover:text-white transition-all">
-            <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
-            <span>[ GITHUB_REPOSITORIES ]</span>
+          <a id="btn-resume" href="#" target="_blank" class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white hover:bg-zinc-200 text-zinc-950 transition-all shadow-sm">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>Xem CV đầy đủ</span>
           </a>
         </div>
       </div>
 
-      <!-- Bio Engineering Summary -->
-      <div class="mt-8 pt-6 border-t border-hw-border">
-        <p id="profile-bio" class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl">
+      <!-- Bio Paragraph -->
+      <div class="mt-8 max-w-3xl">
+        <p id="profile-bio" class="text-zinc-300 text-sm sm:text-base leading-relaxed">
           Loading bio...
         </p>
       </div>
 
-      <!-- Technical Stack Matrix (No rounded pills, technical tags) -->
+      <!-- Skills Cloud -->
       <div class="mt-8">
-        <div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-          <span class="text-amber-400">//</span>
-          <span>CORE_TECHNICAL_COMPETENCIES (KỸ NĂNG KỸ THUẬT CỐT LÕI)</span>
+        <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
+          Kỹ Năng Kỹ Thuật Chính
         </div>
         <div id="skills-cloud" class="flex flex-wrap gap-2">
           <!-- Rendered by JS -->
         </div>
       </div>
 
-      <!-- Field Track Record & Awards (Competition Log) -->
-      <div class="mt-10 pt-8 border-t border-hw-border">
-        <div class="font-mono text-xs text-amber-400 uppercase tracking-wider mb-4 flex items-center justify-between">
-          <span class="flex items-center gap-2">
-            <span>// FIELD_OPERATIONS & COMPETITION_LOG</span>
-            <span class="text-slate-500 font-normal">(Chiến tích thi đấu Robocon & Chietech)</span>
-          </span>
-          <span class="text-slate-500 text-[11px] hidden sm:inline">OFFICIAL_RECORD</span>
+      <!-- Awards & Competition Highlights -->
+      <div class="mt-12 pt-8 border-t border-white/[0.06]">
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+            <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+            <span>Thành Tích & Giải Thưởng Nổi Bật</span>
+          </div>
+          <span class="text-xs text-zinc-400">Robocon & Chietech</span>
         </div>
 
-        <div id="awards-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div id="awards-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
           <!-- Rendered by JS -->
         </div>
       </div>
     </header>
 
-    <!-- ==================== ENGINEERING PROJECTS & CASE FILES ==================== -->
-    <main class="py-12">
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <main class="py-14">
       
-      <!-- Section Title & Filter Tabs -->
+      <!-- Section Title & Category Filter Tabs -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <div class="font-mono text-xs text-amber-500 tracking-wider uppercase mb-1">// SYSTEM_PORTFOLIO</div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
-            <span>Dự Án Kỹ Thuật & Sản Phẩm Đã Chế Tạo</span>
-            <span id="projects-count" class="font-mono text-xs font-semibold px-2 py-0.5 bg-hw-850 text-amber-400 border border-hw-border">0</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2.5">
+            <span>Sản Phẩm & Dự Án Đã Làm</span>
+            <span id="projects-count" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">0</span>
           </h2>
         </div>
 
-        <!-- Filter Buttons (Monospace Brackets) -->
-        <div id="category-filters" class="flex flex-wrap items-center gap-1 bg-hw-950 p-1 border border-hw-border">
+        <!-- Filter Tabs -->
+        <div id="category-filters" class="flex flex-wrap items-center gap-1 p-1 bg-zinc-900 border border-white/[0.06] rounded-xl overflow-x-auto">
           <!-- Rendered by JS -->
         </div>
       </div>
 
-      <!-- Projects Grid (Datasheet Case Files) -->
+      <!-- Projects Grid (Clean Editorial Cards) -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Rendered by JS -->
       </div>
 
       <!-- Empty State -->
-      <div id="empty-state" class="hidden text-center py-16 tech-box">
-        <i data-lucide="file-question" class="w-10 h-10 text-slate-500 mx-auto mb-2"></i>
-        <p class="font-mono text-xs text-slate-400">NO_RECORDS_FOUND_IN_THIS_CATEGORY</p>
+      <div id="empty-state" class="hidden text-center py-16 editorial-card">
+        <i data-lucide="folder" class="w-10 h-10 text-zinc-600 mx-auto mb-2"></i>
+        <p class="text-sm text-zinc-400">Chưa có dự án nào trong mục này.</p>
       </div>
     </main>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="pt-8 border-t border-hw-border font-mono text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span>Đoàn Khắc Hùng • Embedded Systems & Hardware Engineering</span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/HungvsRobot" target="_blank" class="hover:text-amber-400 transition-colors">github.com/HungvsRobot</a>
+    <footer class="pt-10 border-t border-white/[0.06] text-xs text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Đoàn Khắc Hùng • Embedded Systems & Hardware Engineering.</p>
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/HungvsRobot" target="_blank" class="hover:text-white transition-colors">GitHub Profile</a>
         <a href="#top" class="hover:text-white transition-colors flex items-center gap-1">
-          <span>[ TOP ]</span>
+          <span>Lên đầu trang</span>
           <i data-lucide="arrow-up" class="w-3 h-3"></i>
         </a>
       </div>
     </footer>
   </div>
 
-  <!-- ==================== TECHNICAL DOSSIER MODAL ==================== -->
+  <!-- ==================== CASE STUDY MODAL ==================== -->
   <div id="project-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-200">
-    <div id="modal-backdrop" class="absolute inset-0 bg-hw-950/85 backdrop-blur-sm"></div>
+    <!-- Backdrop -->
+    <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
-    <div class="relative w-full h-full overflow-y-auto px-4 py-8 flex justify-center">
-      <div id="modal-container" class="relative w-full max-w-3xl tech-box p-6 sm:p-8 transform transition-transform duration-200 my-auto bg-hw-850 border border-hw-borderLight shadow-2xl">
+    <div class="relative w-full h-full overflow-y-auto px-4 py-8 sm:py-12 flex justify-center">
+      <div id="modal-container" class="relative w-full max-w-3xl bg-[#121216] border border-white/[0.1] rounded-2xl shadow-2xl p-6 sm:p-8 transform scale-95 transition-transform duration-200 my-auto">
         
-        <!-- Header Bar -->
-        <div class="flex items-center justify-between border-b border-hw-border pb-4 mb-6">
-          <div class="font-mono text-xs text-amber-400 flex items-center gap-2">
-            <span>CASE_FILE //</span>
-            <span id="modal-role" class="text-slate-300">ROLE</span>
-            <span class="text-slate-600">--</span>
-            <span id="modal-timeline" class="text-slate-400">TIMELINE</span>
-          </div>
+        <!-- Close Button -->
+        <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
 
-          <button id="modal-close-btn" class="font-mono text-xs text-slate-400 hover:text-white p-1 hover:bg-hw-700 transition-colors">
-            [ CLOSE_X ]
-          </button>
+        <!-- Header -->
+        <div class="pr-10 mb-4">
+          <div class="flex items-center gap-2 text-xs font-semibold text-zinc-400 mb-1.5">
+            <span id="modal-role" class="text-blue-400">ROLE</span>
+            <span>•</span>
+            <span id="modal-timeline">TIMELINE</span>
+          </div>
+          <h3 id="modal-title" class="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            Project Title
+          </h3>
+          <p id="modal-tagline" class="text-zinc-300 text-sm leading-relaxed">
+            Project Tagline
+          </p>
         </div>
 
-        <!-- Project Title -->
-        <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
-          Project Title
-        </h3>
-        <p id="modal-tagline" class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-mono">
-          Project Tagline
-        </p>
-
-        <!-- Image Gallery / Technical View -->
-        <div class="border border-hw-border bg-hw-950 p-1 mb-6">
-          <img id="modal-main-image" src="" alt="Preview" class="w-full h-[280px] sm:h-[400px] object-cover">
-          <div id="modal-gallery-thumbs" class="flex gap-2 p-2 bg-hw-950 border-t border-hw-border overflow-x-auto">
+        <!-- Main Image & Gallery -->
+        <div class="rounded-xl overflow-hidden border border-white/[0.08] bg-zinc-950 mb-6">
+          <img id="modal-main-image" src="" alt="Preview" class="w-full h-[260px] sm:h-[380px] object-cover">
+          <div id="modal-gallery-thumbs" class="flex gap-2 p-2 bg-zinc-950/80 border-t border-white/[0.06] overflow-x-auto">
             <!-- Thumbs injected by JS -->
           </div>
         </div>
 
-        <!-- Metrics Strip (KPIs) -->
-        <div id="modal-metrics" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-6">
+        <!-- Metrics Strip -->
+        <div id="modal-metrics" class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
           <!-- Injected by JS -->
         </div>
 
-        <!-- Tech Stack Badges -->
+        <!-- Tech Skills -->
         <div class="mb-6">
-          <div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-2">// SPECIFICATIONS & TOOLS</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Công nghệ & Công cụ</div>
           <div id="modal-skills" class="flex flex-wrap gap-1.5">
             <!-- Injected by JS -->
           </div>
         </div>
 
-        <!-- Technical Breakdown -->
-        <div class="space-y-4 text-sm text-slate-300 border-t border-hw-border pt-6">
+        <!-- Deep Dive Breakdown -->
+        <div class="space-y-4 text-sm text-zinc-300 border-t border-white/[0.08] pt-6">
           <div>
-            <h4 class="font-mono text-xs uppercase text-amber-400 font-bold mb-1">// THE_CHALLENGE (BÀI TOÁN KỸ THUẬT)</h4>
-            <p id="modal-challenge" class="text-slate-300 leading-relaxed"></p>
+            <h4 class="text-white font-semibold flex items-center gap-2 mb-1.5">
+              <i data-lucide="target" class="w-4 h-4 text-blue-400"></i>
+              <span>Bài toán & Thách thức kỹ thuật</span>
+            </h4>
+            <p id="modal-challenge" class="text-zinc-400 leading-relaxed"></p>
           </div>
 
           <div>
-            <h4 class="font-mono text-xs uppercase text-emerald-400 font-bold mb-1">// IMPLEMENTATION_DETAILS (GIẢI PHÁP ĐÃ THỰC HIỆN)</h4>
-            <ul id="modal-solutions" class="space-y-1.5 list-disc list-inside text-slate-300 leading-relaxed">
+            <h4 class="text-white font-semibold flex items-center gap-2 mb-1.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+              <span>Giải pháp kỹ thuật đã triển khai</span>
+            </h4>
+            <ul id="modal-solutions" class="space-y-1.5 list-disc list-inside text-zinc-400 leading-relaxed">
               <!-- Injected by JS -->
             </ul>
           </div>
         </div>
 
         <!-- Action Links -->
-        <div id="modal-actions" class="mt-8 pt-6 border-t border-hw-border flex flex-wrap items-center justify-end gap-3 font-mono text-xs">
+        <div id="modal-actions" class="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-end gap-3 text-xs font-semibold">
           <!-- Links injected by JS -->
         </div>
 

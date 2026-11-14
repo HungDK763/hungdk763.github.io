@@ -1,6 +1,6 @@
 /**
  * =========================================================================
- * APPLICATION LOGIC (INDUSTRIAL HARDWARE & TECHNICAL PRECISION)
+ * APPLICATION LOGIC (MODERN MINIMALIST EDITORIAL)
  * =========================================================================
  */
 
@@ -16,18 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHeader() {
     const { personal, skills } = PROFILE_CONFIG;
 
-    // Document title
     document.title = `${personal.name} | ${personal.role}`;
-
-    // Telemetry bar
-    const telStatus = document.getElementById('telemetry-status');
-    if (telStatus) telStatus.textContent = `SYS_STATUS: ${personal.status.toUpperCase()}`;
-
-    const telComp = document.getElementById('telemetry-company');
-    if (telComp && personal.company) telComp.textContent = `@ ${personal.company.toUpperCase()}`;
-
-    const telLoc = document.getElementById('telemetry-location');
-    if (telLoc && personal.location) telLoc.textContent = `LOC: ${personal.location.toUpperCase()}`;
 
     // Avatar & Info
     const avatarImg = document.getElementById('profile-avatar');
@@ -44,33 +33,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnResume = document.getElementById('btn-resume');
     if (btnResume && personal.resumeUrl) btnResume.href = personal.resumeUrl;
 
-    // Core Skills Matrix
+    const navBtnResume = document.getElementById('nav-btn-resume');
+    if (navBtnResume && personal.resumeUrl) navBtnResume.href = personal.resumeUrl;
+
+    // Skills
     const skillsCloud = document.getElementById('skills-cloud');
     if (skillsCloud && skills) {
       skillsCloud.innerHTML = skills.map(skill => `
-        <span class="bracket-tag">
-          [ ${skill.name} ]
+        <span class="clean-pill">
+          ${skill.name}
         </span>
       `).join('');
     }
   }
 
-  // 1.5 RENDER FIELD AWARDS & TRACK RECORD
+  // 1.5 RENDER AWARDS & HONORS
   function renderAwards() {
     const container = document.getElementById('awards-list');
     if (!container || !PROFILE_CONFIG.awards) return;
 
     container.innerHTML = PROFILE_CONFIG.awards.map(award => `
-      <div class="tech-box p-3.5 flex flex-col justify-between">
+      <div class="editorial-card p-4 flex flex-col justify-between">
         <div>
-          <div class="font-mono text-[10px] text-amber-500 flex items-center justify-between mb-1.5 border-b border-hw-border pb-1">
-            <span>YEAR: ${award.year}</span>
-            <span class="text-slate-400">${award.team}</span>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-md border border-amber-400/20">
+              ${award.year}
+            </span>
+            <span class="text-xs text-zinc-400 font-medium">${award.team}</span>
           </div>
-          <h4 class="text-xs sm:text-sm font-bold text-slate-100 mb-1 leading-snug tracking-tight">
+          <h4 class="text-sm font-bold text-white mb-1.5 leading-snug">
             ${award.title}
           </h4>
-          <p class="text-[11px] text-slate-400 leading-relaxed font-mono">
+          <p class="text-xs text-zinc-400 leading-relaxed">
             ${award.desc}
           </p>
         </div>
@@ -83,17 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const filtersContainer = document.getElementById('category-filters');
     if (!filtersContainer || !PROFILE_CONFIG.categories) return;
 
-    filtersContainer.innerHTML = PROFILE_CONFIG.categories.map((cat, idx) => `
+    filtersContainer.innerHTML = PROFILE_CONFIG.categories.map(cat => `
       <button 
         data-category="${cat.id}" 
-        class="tech-filter-btn ${cat.id === currentCategory ? 'active' : ''}">
-        [ 0${idx}_${cat.label.replace(/\s+/g, '_').toUpperCase()} ]
+        class="filter-tab ${cat.id === currentCategory ? 'active' : ''}">
+        ${cat.label}
       </button>
     `).join('');
 
-    filtersContainer.querySelectorAll('.tech-filter-btn').forEach(btn => {
+    filtersContainer.querySelectorAll('.filter-tab').forEach(btn => {
       btn.addEventListener('click', () => {
-        filtersContainer.querySelectorAll('.tech-filter-btn').forEach(b => b.classList.remove('active'));
+        filtersContainer.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentCategory = btn.getAttribute('data-category');
         renderProjects();
@@ -101,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. RENDER PROJECTS (HARDWARE CASE FILES)
+  // 3. RENDER PROJECTS (EDITORIAL SHOWCASE CARDS)
   function renderProjects() {
     const grid = document.getElementById('projects-grid');
     const emptyState = document.getElementById('empty-state');
@@ -123,80 +117,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
     emptyState.classList.add('hidden');
 
-    grid.innerHTML = filteredProjects.map((project, idx) => `
-      <div class="tech-box p-4 flex flex-col justify-between group cursor-pointer" data-project-id="${project.id}">
+    grid.innerHTML = filteredProjects.map(project => `
+      <div class="editorial-card overflow-hidden flex flex-col group cursor-pointer" data-project-id="${project.id}">
         
-        <!-- Case File Header -->
-        <div class="font-mono text-[11px] text-slate-400 flex items-center justify-between pb-2.5 mb-3 border-b border-hw-border">
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span class="text-amber-500 font-bold">CASE_FILE_${String(idx + 1).padStart(2, '0')}</span>
-            <span class="text-slate-600">//</span>
-            <span>${project.timeline}</span>
-          </div>
-          ${project.featured ? `
-            <span class="px-1.5 py-0.2 bg-amber-500/10 border border-amber-500/30 text-[10px] text-amber-400 font-bold">
-              [ FEATURED ]
-            </span>
-          ` : ''}
-        </div>
-
-        <!-- Media Preview Frame -->
-        <div class="relative w-full aspect-video bg-hw-950 border border-hw-border overflow-hidden mb-4">
+        <!-- Media Container (16:9) -->
+        <div class="relative w-full aspect-video overflow-hidden bg-zinc-950">
           <img 
             src="${project.heroImage}" 
             alt="${project.title}" 
-            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             loading="lazy"
           />
+          <!-- Badge overlay -->
+          <div class="absolute top-3 left-3 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-xs font-semibold text-zinc-200">
+              ${project.timeline}
+            </span>
+            ${project.featured ? `
+              <span class="px-2.5 py-1 rounded-full bg-blue-600/90 text-xs font-semibold text-white shadow-sm">
+                Nổi bật
+              </span>
+            ` : ''}
+          </div>
         </div>
 
-        <!-- Title & Overview -->
-        <div class="flex-1 flex flex-col justify-between">
+        <!-- Card Content -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <div class="font-mono text-[11px] text-slate-400 mb-1 flex items-center gap-1.5">
-              <span>ROLE:</span>
-              <span class="text-slate-200">${project.role}</span>
+            <div class="text-xs font-medium text-zinc-400 mb-1.5 flex items-center gap-1.5">
+              <span>${project.role}</span>
             </div>
 
-            <h3 class="text-lg font-bold text-white tracking-tight group-hover:text-amber-400 transition-colors mb-2">
+            <h3 class="font-display text-lg font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors mb-2">
               ${project.title}
             </h3>
 
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2">
+            <p class="text-zinc-300 text-sm leading-relaxed mb-4 line-clamp-2">
               ${project.tagline || project.overview}
             </p>
 
-            <!-- Technical Specification Badges -->
-            <div class="flex flex-wrap gap-1 mb-4">
-              ${project.skills.slice(0, 5).map(skill => `
-                <span class="bracket-tag">
-                  [ ${skill} ]
+            <!-- Skill Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              ${project.skills.slice(0, 4).map(skill => `
+                <span class="clean-pill text-[11px] py-1 px-2">
+                  ${skill}
                 </span>
               `).join('')}
-              ${project.skills.length > 5 ? `
-                <span class="bracket-tag text-slate-500">
-                  +${project.skills.length - 5}
+              ${project.skills.length > 4 ? `
+                <span class="clean-pill text-[11px] py-1 px-2 text-zinc-400">
+                  +${project.skills.length - 4}
                 </span>
               ` : ''}
             </div>
           </div>
 
-          <!-- Bottom Action Strip -->
-          <div class="pt-3 border-t border-hw-border flex items-center justify-between font-mono text-xs">
-            <button class="inline-flex items-center gap-1.5 text-amber-400 group-hover:text-amber-300 transition-colors font-bold">
-              <span>[ VIEW_CASE_FILE → ]</span>
+          <!-- Bottom Actions -->
+          <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-semibold">
+            <button class="inline-flex items-center gap-1.5 text-blue-400 group-hover:text-white transition-colors">
+              <span>Xem chi tiết dự án</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </button>
 
-            <div class="flex items-center gap-3 text-slate-400" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3 text-zinc-400" onclick="event.stopPropagation()">
               ${project.links?.github ? `
-                <a href="${project.links.github}" target="_blank" class="hover:text-white transition-colors" title="Mã nguồn">
-                  [ GIT ]
+                <a href="${project.links.github}" target="_blank" class="hover:text-white transition-colors p-1" title="Mã nguồn">
+                  <i data-lucide="github" class="w-4 h-4"></i>
                 </a>
               ` : ''}
               ${project.links?.demo ? `
-                <a href="${project.links.demo}" target="_blank" class="hover:text-amber-400 transition-colors" title="Demo / Video">
-                  [ DEMO ]
+                <a href="${project.links.demo}" target="_blank" class="hover:text-blue-400 transition-colors p-1" title="Xem Demo">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
               ` : ''}
             </div>
@@ -206,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    // Attach click to open modal
-    grid.querySelectorAll('.tech-box[data-project-id]').forEach(card => {
+    // Attach click events
+    grid.querySelectorAll('.editorial-card').forEach(card => {
       card.addEventListener('click', () => {
         const id = card.getAttribute('data-project-id');
         openModal(id);
@@ -217,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   }
 
-  // 4. TECHNICAL DOSSIER MODAL
+  // 4. CASE STUDY MODAL
   const modal = document.getElementById('project-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalBackdrop = document.getElementById('modal-backdrop');
@@ -226,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const project = PROFILE_CONFIG.projects.find(p => p.id === projectId);
     if (!project || !modal) return;
 
-    document.getElementById('modal-role').textContent = project.role.toUpperCase();
+    document.getElementById('modal-role').textContent = project.role;
     document.getElementById('modal-timeline').textContent = project.timeline;
     document.getElementById('modal-title').textContent = project.title;
     document.getElementById('modal-tagline').textContent = project.tagline || project.overview;
@@ -241,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (images.length > 1) {
       thumbsContainer.classList.remove('hidden');
       thumbsContainer.innerHTML = images.map((imgUrl, idx) => `
-        <button class="w-16 h-12 border ${idx === 0 ? 'border-amber-400' : 'border-hw-border opacity-60'} hover:opacity-100 transition-all flex-shrink-0" onclick="document.getElementById('modal-main-image').src='${imgUrl}'">
+        <button class="w-16 h-12 rounded-lg overflow-hidden border ${idx === 0 ? 'border-blue-400' : 'border-white/10 opacity-60'} hover:opacity-100 transition-all flex-shrink-0" onclick="document.getElementById('modal-main-image').src='${imgUrl}'">
           <img src="${imgUrl}" class="w-full h-full object-cover">
         </button>
       `).join('');
@@ -249,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbsContainer.classList.add('hidden');
     }
 
-    // Metrics (KPI cards in technical style)
+    // Metrics Strip
     const metricsContainer = document.getElementById('modal-metrics');
     if (project.metrics && project.metrics.length > 0) {
       metricsContainer.classList.remove('hidden');
       metricsContainer.innerHTML = project.metrics.map(m => `
-        <div class="tech-box p-2.5 text-center font-mono">
-          <div class="text-sm sm:text-base font-bold text-amber-400 mb-0.5">${m.value}</div>
-          <div class="text-[10px] text-slate-400 uppercase">${m.label}</div>
+        <div class="p-3 rounded-xl bg-zinc-900 border border-white/[0.06] text-center">
+          <div class="text-base sm:text-lg font-bold text-blue-400 mb-0.5">${m.value}</div>
+          <div class="text-xs text-zinc-400">${m.label}</div>
         </div>
       `).join('');
     } else {
@@ -266,8 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Skills
     const skillsContainer = document.getElementById('modal-skills');
     skillsContainer.innerHTML = project.skills.map(s => `
-      <span class="bracket-tag">
-        [ ${s} ]
+      <span class="clean-pill">
+        ${s}
       </span>
     `).join('');
 
@@ -286,15 +276,17 @@ document.addEventListener('DOMContentLoaded', () => {
     actionsContainer.innerHTML = '';
     if (project.links?.demo) {
       actionsContainer.innerHTML += `
-        <a href="${project.links.demo}" target="_blank" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-hw-950 font-bold transition-all">
-          [ WATCH_DEMO_VIDEO ]
+        <a href="${project.links.demo}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-zinc-950 font-semibold text-xs hover:bg-zinc-200 transition-all">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Xem Video / Demo</span>
         </a>
       `;
     }
     if (project.links?.github) {
       actionsContainer.innerHTML += `
-        <a href="${project.links.github}" target="_blank" class="px-3 py-1.5 tech-box text-slate-200 hover:text-white transition-all">
-          [ GITHUB_REPOSITORY ]
+        <a href="${project.links.github}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-medium text-xs transition-all">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Xem Mã Nguồn GitHub</span>
         </a>
       `;
     }
@@ -314,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       modal.classList.add('hidden');
       document.body.style.overflow = '';
-    }, 150);
+    }, 200);
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
