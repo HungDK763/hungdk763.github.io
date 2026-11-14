@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container || !PROFILE_CONFIG.awards) return;
 
     container.innerHTML = PROFILE_CONFIG.awards.map(award => `
-      <div class="editorial-card p-4 flex flex-col justify-between">
+      <div class="editorial-card p-4 flex flex-col justify-between hover:border-white/20 transition-all">
         <div>
           <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-md border border-amber-400/20">
+            <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-md border border-amber-400/20 whitespace-nowrap">
               ${award.year}
             </span>
-            <span class="text-xs text-zinc-400 font-medium">${award.team}</span>
+            <span class="text-xs text-zinc-400 font-medium truncate">${award.team}</span>
           </div>
           <h4 class="text-sm font-bold text-white mb-1.5 leading-snug">
             ${award.title}
@@ -82,16 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Node Dot -->
         <span class="absolute -left-[29px] top-4 w-2.5 h-2.5 rounded-full ${item.isCurrent ? 'bg-emerald-400 ring-4 ring-emerald-400/20 animate-pulse' : 'bg-zinc-600 ring-4 ring-[#09090b] group-hover:bg-blue-400'} transition-colors"></span>
         
-        <div class="editorial-card p-4 hover:border-white/20 transition-all">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1.5">
-            <div class="flex items-center gap-2">
-              <h4 class="text-sm font-bold text-white">${item.role}</h4>
-              <span class="text-xs font-semibold text-zinc-400">@ ${item.company}</span>
-            </div>
-            <span class="inline-flex text-[11px] font-semibold font-mono ${item.isCurrent ? 'text-emerald-400 bg-emerald-400/10 border border-emerald-400/20' : 'text-zinc-400 bg-zinc-800'} px-2 py-0.5 rounded w-fit">
+        <div class="editorial-card p-4 hover:border-white/20 transition-all space-y-2">
+          <!-- Row 1: Period (whitespace-nowrap) + Company -->
+          <div class="flex items-center justify-between gap-2 border-b border-white/[0.04] pb-1.5">
+            <span class="inline-flex items-center text-[11px] font-semibold font-mono whitespace-nowrap px-2 py-0.5 rounded ${item.isCurrent ? 'text-emerald-400 bg-emerald-400/10 border border-emerald-400/20' : 'text-zinc-400 bg-zinc-800'}">
               ${item.period}
             </span>
+            <span class="text-xs font-semibold text-zinc-400 truncate">
+              ${item.company}
+            </span>
           </div>
+
+          <!-- Row 2: Role on its own line -->
+          <h4 class="text-sm font-bold text-white leading-snug">
+            ${item.role}
+          </h4>
+
+          <!-- Row 3: Description -->
           <p class="text-xs text-zinc-300 leading-relaxed">
             ${item.desc}
           </p>

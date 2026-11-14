@@ -49,14 +49,14 @@ const PROFILE_CONFIG = {
   awards: [
     {
       year: "2024",
-      title: "Vô Địch Robocon ĐH Công nghiệp Hà Nội (Champion)",
+      title: "Vô Địch Robocon ĐH Công nghiệp Hà Nội",
       team: "Đội DCN-LOE",
       desc: "Đội trưởng chỉ huy thiết kế toàn diện robot tự hành, hoàn thành bài thi trong 70 giây; Vòng 1/8 Chung kết Robocon Toàn quốc."
     },
     {
       year: "2024",
-      title: "Giải Ba & Giải Sáng Tạo Cuộc thi EC CHALLENGE",
-      team: "Học viện CNBCVT (PTIT)",
+      title: "Giải Ba & Giải Sáng Tạo EC CHALLENGE",
+      team: "Học viện CNBCVT PTIT",
       desc: "Giải thưởng sáng tạo trong thiết kế hệ thống phần cứng và thuật toán điều khiển nhúng thông minh."
     },
     {
@@ -67,7 +67,7 @@ const PROFILE_CONFIG = {
     },
     {
       year: "2023",
-      title: "Giải Ba Cuộc Thi SUMO ROBOT tại ĐH Bách Khoa Hà Nội",
+      title: "Giải Ba Cuộc Thi SUMO ROBOT ĐH Bách Khoa Hà Nội",
       team: "HUST - Đội H2O",
       desc: "Thiết kế mạch công suất cao và thuật toán tác chiến đối kháng tự động."
     },
@@ -97,7 +97,7 @@ const PROFILE_CONFIG = {
     },
     {
       period: "03/2025 – 03/2026",
-      role: "Kỹ Sư Hệ Thống Ô Tô (Automotive Engineer)",
+      role: "Kỹ Sư Hệ Thống Ô Tô",
       company: "VinFast Việt Nam",
       location: "Hải Phòng / Hà Nội",
       isCurrent: false,
@@ -105,7 +105,7 @@ const PROFILE_CONFIG = {
     },
     {
       period: "2023 – 03/2025",
-      role: "Kỹ Sư Nhúng & Phần Cứng Độc Lập",
+      role: "Kỹ Sư Nhúng & Phần Cứng",
       company: "Freelance Engineer",
       location: "Dự án độc lập",
       isCurrent: false,
@@ -114,15 +114,15 @@ const PROFILE_CONFIG = {
     {
       period: "09/2022 – 03/2024",
       role: "Kỹ Sư R&D Sản Phẩm",
-      company: "Công ty TNHH Phát triển Công nghệ QT Việt Nam",
+      company: "QT Vietnam Technology",
       location: "Hà Nội",
       isCurrent: false,
       desc: "Nghiên cứu, thiết kế phần cứng và phát triển firmware cho bộ kit học tập robot STEM và bộ nguồn AC đa năng."
     },
     {
       period: "2021 – 2024",
-      role: "Đội Trưởng Robocon & Cử Nhân Kỹ Thuật",
-      company: "Đại học Công nghiệp Hà Nội (HaUI)",
+      role: "Đội Trưởng Robocon",
+      company: "Đại học Công nghiệp Hà Nội",
       location: "Hà Nội",
       isCurrent: false,
       desc: "Tốt nghiệp chuyên ngành Kỹ thuật Điện - Điện tử. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch trường 2024, giải Nhì 2023, Vòng 1/8 Quốc gia)."
