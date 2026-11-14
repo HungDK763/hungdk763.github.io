@@ -131,11 +131,11 @@ const PROFILE_CONFIG = {
 
   // 4. BỘ LỌC DANH MỤC DỰ ÁN (PROJECT CATEGORIES)
   categories: [
-    { id: "all", label: "Tất cả dự án & Sản phẩm" },
-    { id: "robotics", label: "Robot thi đấu & Chế tạo máy" },
-    { id: "automotive", label: "Hệ thống ô tô & ECU" },
-    { id: "pcb", label: "Thiết kế mạch & PCB" },
-    { id: "industrial", label: "Tự động hóa & Thiết bị y tế" }
+    { id: "all", label: "Tất cả" },
+    { id: "robotics", label: "Robot" },
+    { id: "automotive", label: "Ô tô & ECU" },
+    { id: "pcb", label: "Mạch & PCB" },
+    { id: "industrial", label: "Tự động hóa" }
   ],
 
   // 5. DANH SÁCH DỰ ÁN THỰC CHIẾN (CASE STUDIES CHUẨN LOWINERTIA)

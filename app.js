@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filtersContainer.innerHTML = PROFILE_CONFIG.categories.map(cat => `
       <button 
         data-category="${cat.id}" 
-        class="filter-tab ${cat.id === currentCategory ? 'active' : ''}">
+        class="filter-tab whitespace-nowrap ${cat.id === currentCategory ? 'active' : ''}">
         ${cat.label}
       </button>
     `).join('');

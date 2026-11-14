@@ -68,7 +68,7 @@
         </button>
         <a id="nav-btn-resume" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors shadow-sm">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>Tải CV</span>
+          <span>Hồ sơ</span>
         </a>
         <a id="nav-btn-github" href="https://github.com/HungDK763" target="_blank" class="p-2 rounded-lg bg-zinc-900 border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">
           <i data-lucide="github" class="w-4 h-4"></i>
@@ -119,9 +119,9 @@
               <i data-lucide="message-square-share" class="w-4 h-4"></i>
               <span>Thông tin liên hệ</span>
             </button>
-            <a id="btn-resume" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 border border-white/[0.1] text-zinc-200 hover:text-white transition-all shadow-sm">
+            <a id="btn-resume" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-850 border border-white/[0.1] text-zinc-200 hover:text-white transition-all shadow-sm">
               <i data-lucide="file-text" class="w-4 h-4 text-blue-400"></i>
-              <span>Xem tệp CV gốc</span>
+              <span>Hồ sơ</span>
             </a>
           </div>
 
@@ -175,18 +175,18 @@
       <!-- ==================== RIGHT COLUMN: MAIN SHOWCASE (PROJECTS & AWARDS) ==================== -->
       <main class="w-full flex-1 min-w-0 space-y-12">
         
-        <!-- Projects Section Header & Filters -->
+        <!-- Projects Section Header & Filters (Guaranteed Single Row) -->
         <div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2.5">
-                <span>Sản phẩm</span>
-                <span id="projects-count" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">0</span>
+          <div class="flex items-center justify-between gap-3 mb-6 pb-3 border-b border-white/[0.06] overflow-x-auto">
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <h2 class="font-display text-xl sm:text-2xl font-bold text-white tracking-tight whitespace-nowrap">
+                Sản phẩm
               </h2>
+              <span id="projects-count" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700 whitespace-nowrap">0</span>
             </div>
 
-            <!-- Filter Tabs -->
-            <div id="category-filters" class="flex flex-wrap items-center gap-1 p-1 bg-zinc-900 border border-white/[0.06] rounded-xl overflow-x-auto">
+            <!-- Filter Tabs: Single horizontal row -->
+            <div id="category-filters" class="flex items-center gap-1 p-1 bg-zinc-900 border border-white/[0.06] rounded-xl flex-shrink-0">
               <!-- Rendered by JS -->
             </div>
           </div>
@@ -415,7 +415,7 @@
   </div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="profile-config.js?v=20261114_07"></script>
-  <script src="app.js?v=20261114_07"></script>
+  <script src="profile-config.js?v=20261114_08"></script>
+  <script src="app.js?v=20261114_08"></script>
 </body>
 </html>
