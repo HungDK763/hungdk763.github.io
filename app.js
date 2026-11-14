@@ -309,10 +309,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 200);
   }
 
+  // 5. CONTACT MODAL (OPTION B)
+  const contactModal = document.getElementById('contact-modal');
+  const btnContact = document.getElementById('btn-contact');
+  const contactCloseBtn = document.getElementById('contact-modal-close');
+  const contactBackdrop = document.getElementById('contact-modal-backdrop');
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  const copyEmailText = document.getElementById('copy-email-text');
+
+  function openContactModal() {
+    if (!contactModal) return;
+    contactModal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      contactModal.classList.add('active');
+    });
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function closeContactModal() {
+    if (!contactModal) return;
+    contactModal.classList.remove('active');
+    setTimeout(() => {
+      contactModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 200);
+  }
+
+  if (btnContact) btnContact.addEventListener('click', openContactModal);
+  if (contactCloseBtn) contactCloseBtn.addEventListener('click', closeContactModal);
+  if (contactBackdrop) contactBackdrop.addEventListener('click', closeContactModal);
+
+  // Copy email to clipboard
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const email = PROFILE_CONFIG.personal.email || 'hungrbc2024@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        if (copyEmailText) copyEmailText.textContent = 'Đã chép!';
+        setTimeout(() => {
+          if (copyEmailText) copyEmailText.textContent = 'Sao chép';
+        }, 2000);
+      }).catch(() => {
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        if (copyEmailText) copyEmailText.textContent = 'Đã chép!';
+        setTimeout(() => {
+          if (copyEmailText) copyEmailText.textContent = 'Sao chép';
+        }, 2000);
+      });
+    });
+  }
+
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
   if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+      closeModal();
+      closeContactModal();
+    }
   });
 
   // INITIAL RUN

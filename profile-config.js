@@ -19,7 +19,7 @@ const PROFILE_CONFIG = {
     phone: "0386618771",
     email: "hungrbc2024@gmail.com",
     education: "Kỹ sư Kỹ thuật Điện - Điện tử, Đại học Công nghiệp Hà Nội (HaUI)",
-    bio: "Kỹ sư hệ thống nhúng với 3+ năm kinh nghiệm thực chiến phát triển hệ thống điều khiển robot & tự động hóa trên STM32/Arduino, và 2+ năm Freelance thiết kế mạch điện tử, firmware tùy biến. Hiện đang công tác tại VinFast phát triển công cụ mô phỏng ECU và hệ thống điều khiển xe tự động. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch cấp trường, Top 16 Chung kết Quốc gia).",
+    bio: "Kỹ sư hệ thống nhúng với 3+ năm kinh nghiệm thực chiến phát triển hệ thống điều khiển robot & tự động hóa trên STM32/Arduino, và 2+ năm Freelance thiết kế mạch điện tử, firmware tùy biến. Hiện đang công tác tại VinFast phát triển công cụ mô phỏng ECU và hệ thống điều khiển xe tự động. 3 năm liên tiếp tham gia Robocon Vietnam (2 năm Đội trưởng vô địch cấp trường, Vòng 1/8 Chung kết Quốc gia).",
     avatar: "assets/images/avatar.jpg", // Ảnh chân dung chính thức trích xuất từ CV
     resumeUrl: "data/CV_HungDK_2025_ENG.pdf", // Tệp CV PDF gốc
     socials: {
@@ -51,7 +51,7 @@ const PROFILE_CONFIG = {
       year: "2024",
       title: "Vô Địch Robocon ĐH Công nghiệp Hà Nội (Champion)",
       team: "Đội DCN-LOE",
-      desc: "Đội trưởng chỉ huy thiết kế toàn diện robot tự hành, hoàn thành bài thi trong 70 giây; Top 16 Chung kết Robocon Toàn quốc."
+      desc: "Đội trưởng chỉ huy thiết kế toàn diện robot tự hành, hoàn thành bài thi trong 70 giây; Vòng 1/8 Chung kết Robocon Toàn quốc."
     },
     {
       year: "2024",
@@ -63,7 +63,7 @@ const PROFILE_CONFIG = {
       year: "2023",
       title: "Giải Nhì Robocon ĐH Công nghiệp Hà Nội",
       team: "Đội DCN-UBKM",
-      desc: "Đội trưởng thiết kế hệ thống robot cơ sở và robot bắn vòng tự động; Top 16 Chung kết Toàn quốc."
+      desc: "Đội trưởng thiết kế hệ thống robot cơ sở và robot bắn vòng tự động; Vòng 1/8 Chung kết Toàn quốc."
     },
     {
       year: "2023",
@@ -116,7 +116,7 @@ const PROFILE_CONFIG = {
       metrics: [
         { label: "Thành tích", value: "Vô Địch HaUI" },
         { label: "Thời gian hoàn thành", value: "70 Giây" },
-        { label: "Đấu trường Quốc gia", value: "Top 16 Toàn quốc" }
+        { label: "Đấu trường Quốc gia", value: "Vòng 1/8 Toàn quốc" }
       ],
       gallery: [
         "assets/images/robocon_2024_robot1.jpg",
@@ -135,7 +135,7 @@ const PROFILE_CONFIG = {
       role: "Team Leader (Đội DCN-UBKM)",
       timeline: "2022 - 2023",
       featured: true,
-      tagline: "Chỉ huy kỹ thuật chế tạo cặp robot phối hợp tự động và bán tự động, đạt Giải Nhì Robocon HaUI và lọt vào Top 16 Chung kết Quốc gia.",
+      tagline: "Chỉ huy kỹ thuật chế tạo cặp robot phối hợp tự động và bán tự động, đạt Giải Nhì Robocon HaUI và lọt vào Vòng 1/8 Chung kết Quốc gia.",
       heroImage: "assets/images/robocon_2023_robot1.jpg",
       skills: ["STM32", "C/C++", "Omni-Wheel Drive", "PID Control", "SolidWorks", "Sensor Fusion", "Pneumatics"],
       overview: "Lãnh đạo đội ngũ kỹ sư cơ điện tử thiết kế hệ thống robot kép: một robot cơ sở đa hướng dẫn đường kết hợp cơ cấu ném vòng tự động của robot thỏ (bunny robot).",
@@ -147,7 +147,7 @@ const PROFILE_CONFIG = {
       ],
       metrics: [
         { label: "Thành tích", value: "Giải Nhì HaUI" },
-        { label: "Đấu trường Quốc gia", value: "Top 16 Toàn quốc" },
+        { label: "Đấu trường Quốc gia", value: "Vòng 1/8 Toàn quốc" },
         { label: "Độ chính xác ngắm", value: "95%+" }
       ],
       gallery: [
