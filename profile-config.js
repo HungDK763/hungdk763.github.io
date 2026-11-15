@@ -32,15 +32,16 @@ const PROFILE_CONFIG = {
   // 2. KỸ NĂNG CỐT LÕI (CORE SKILLS & TECHNOLOGIES)
   skills: [
     { name: "C / C++ (Embedded)", category: "Firmware" },
-    { name: "Python (Automation & Data)", category: "Software" },
-    { name: "Microcontrollers (STM32, ATmega, ESP32)", category: "Hardware" },
+    { name: "MCU: TI AM263P (Cortex-R5F hiệu suất cao), STM32, Nuvoton, ESP32", category: "Hardware" },
+    { name: "Automotive UDS (ISO 14229 / ISO-TP - Code từ con số 0)", category: "Automotive" },
+    { name: "Automotive Bus: CAN 2.0 / CAN FD / LIN / CAPL", category: "Automotive" },
     { name: "Altium Designer & EasyEDA", category: "EDA / PCB" },
     { name: "PCB Layout (1 - 4 Layers)", category: "EDA / PCB" },
     { name: "SolidWorks & Onshape (3D CAD)", category: "Mechanical" },
     { name: "Control Algorithms (PID, Fuzzy PID, Kalman)", category: "Control" },
     { name: "Robot Kinematics & Inverse Kinematics", category: "Robotics" },
     { name: "Omni & Mecanum Motion Control", category: "Robotics" },
-    { name: "Automotive: CAN 2.0 / CAN FD / LIN / CAPL", category: "Automotive" },
+    { name: "Python (Automation & Data)", category: "Software" },
     { name: "Protocols: UART, I2C, SPI, 1-Wire, Modbus", category: "Protocols" },
     { name: "PLC Programming (Siemens S7-1200, S7-300)", category: "Industrial" }
   ],
@@ -213,7 +214,7 @@ const PROFILE_CONFIG = {
       featured: true,
       tagline: "Mô phỏng các hộp điều khiển ECU và phát triển công cụ điều khiển tự động phục vụ kiểm thử và xác thực hệ thống xe điện.",
       heroImage: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80",
-      skills: ["CAPL", "CAN 2.0 / CAN FD", "LIN", "ECU Simulation", "Low-Voltage Power Simulation", "Logic Validation"],
+      skills: ["CAPL", "CAN 2.0 / CAN FD", "LIN", "UDS (ISO 14229)", "ECU Simulation", "Low-Voltage Power Simulation", "Logic Validation"],
       overview: "Tại VinFast, trực tiếp tham gia mô phỏng các khối ECU và phát triển hệ thống điều khiển xe tự động: từ thiết kế hệ thống, lập trình, nghiệm thu (commissioning) đến kiểm tra hiệu năng và xác thực logic điều khiển.",
       challenge: "Đảm bảo tính toàn vẹn của dữ liệu trên bus CAN/LIN trong mọi kịch bản sụt áp nguồn thấp (low-voltage transient) và kiểm thử an toàn các tính năng xe tự động trước khi triển khai trên xe thử nghiệm.",
       solution: [
